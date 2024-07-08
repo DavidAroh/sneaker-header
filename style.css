@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Jost", sans-serif;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    justify-content: center;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.icons{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    left: 70px;
+}
+.logo img{
+    position: relative;
+    right: 186px;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-left: 25%;
+    margin-bottom: 15%;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: -2s;
+    /* position: absolute;
+    top: 25%;
+    left:20%; */
+}
+.good-shoes{
+    margin-bottom: 32px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 56px;
+    letter-spacing: -2.2px;
+    line-height: 1.143;
+    text-transform: uppercase;
+    color: var(--neutral-dark, #111111);
+}
+.shoe:hover{
+    transform: translateY(-10px);
+}
+.shoe{
+    animation: slideInLeft 1s ease-in ;
+    /* animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards ; */
+
+    /* transform: translateX(-150px); */
+}
+@keyframes slideInLeft {
+    from{
+        transform: translateX(-300px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+}
+.first button{
+    border-radius: 4px;
+    border: 1px solid black;
+    color:black;
+    background-color: white;
+    padding: 11px 0.1px 11px 0;
+    width: 138px;
+    box-sizing: border-box;
+    transition: transform 0.3s, background-color 0.3s,
+    color 0.3s;
+}
+.first button:hover{
+    transform: translateY(-10px);
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+@keyframes example {
+    0%   {background-color:transparent; left:0px; top:0px;}
+    25%  {background-color:transparent; left:100px; top:0px;}
+    50%  {background-color:transparent; left:100px; top:00px;}
+    75%  {background-color:transparent; left:0px; top:100px;}
+    100% {background-color:transparent; left:0px; top:0px;}
+}
+.sidebar{
+    display: none;
+}
+input{
+    display: none;
+    visibility: hidden;
+    /* -webkit-appearance:none; */
+}
+@media screen and (max-width: 678px) {
+    .content{
+        z-index: 20;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .first{
+        position: relative;
+        left: -60px;
+        animation: slideInRight 1s ease-in ;
+    }
+    @keyframes slideInRight {
+        from{
+            transform: translateX(200px);
+        }
+    
+        to{
+            transform: translateX(0px);
+        }
+    }
+    nav{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+    .logo img{
+        position: absolute;
+        left: 20px;
+    }
+    .shoe img{
+        position: absolute;
+        left: -39px;
+        /* right: 10px; */
+        width: 112%;
+        /* z-index: 10; */
+    }
+    .nav-links{
+        display: none;
+    }
+    .icons{
+        display: none;
+    }
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 190px;
+        height: 800px;
+        position: absolute;
+        top: -10px;
+        right: 500px;
+        /* bottom: 100px; */
+        background: white;
+        transition: 0.5s ease-in;
+        transform: translateX(-300px);
+    }
+    .icons2{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style: none;
+        padding-top: 50%;
+        gap: 10px;
+    }
+    .menu h1{
+        padding: 10px 0 ;
+        padding-left: 30px;
+    }
+    .nav-links2 li{
+        list-style: none;
+        padding: 5px 0;
+        display: block;
+        transition: 0.2s ease-out;
+        text-decoration: none;
+    }
+    .nav-links2 li{
+        width: 40px;
+        padding-left: 40px;
+        text-align: center;
+    }
+    .nav-links2 a{
+        color: black;
+        text-decoration: none;
+    }
+    input{
+        display: none;
+        visibility: hidden;
+        -webkit-appearance:none;
+    }
+    .toggle{
+        position: absolute;
+        top: 18px;
+        right: 5%;
+        height: 30px;
+        width: 30px;
+        /* background-color: #f2f2f2; */
+        z-index: 1;
+        cursor: pointer;
+        border-radius: 3px;
+        /* box-shadow: 0 0 10px rgba(0,0,0,0.3); */
+    }
+    .toggle .common{
+        position: absolute;
+        height: 2px;
+        width: 20px;
+        background-color: black;
+        border-radius: 50px;
+        transition: 0.3s ease;
+    }
+    .toggle .top-line{
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .toggle .middle-line{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .toggle .bottom-line{
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    input:checked ~ .toggle .top-line{
+        left: 2px;
+        top: 14px;
+        width: 25px;
+        transform: rotate(45deg);
+    }
+    input:checked ~ .toggle .bottom-line{
+        left: 2px;
+        top: 14px;
+        width: 25px;
+        transform: rotate(-45deg);
+    }
+    input:checked ~ .toggle .middle-line{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    input:checked ~ .sidebar{
+        transform: translateX(310px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.5)                                                                                                        ;
+    }
+}
